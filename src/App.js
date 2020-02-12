@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TableData from "./Component/Table.json";
+import Table from "./Component/Table";
+import Header from "./Component/Header";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+    handleClick() {
+        this.props.onClick()
+     }
+
+    render() {
+        // eslint-disable-next-line
+        // const {  } = this.props;
+        return (
+            <React.Fragment>
+              <Header/>
+              <Table  items={TableData.items}/>
+              </React.Fragment>
+        )
+    }
+
 }
 
-export default App;
+
+  export default App;
